@@ -52,7 +52,7 @@
     handle.addEventListener('click', () => { const o = cta.classList.toggle('is-open'); handle.setAttribute('aria-expanded', o); label.textContent = o ? '닫기' : '열기'; if (o) form.querySelector('input').focus(); });
     const ok = () => form.name.value.trim() && /^[0-9-]{9,13}$/.test(form.tel.value.trim()) && form.agree.checked;
     form.addEventListener('input', () => { btn.disabled = !ok(); });
-    form.addEventListener('submit', (e) => { e.preventDefault(); if (!ok()) return; msg.innerHTML = '데모 화면이라 신청이 접수되지 않습니다. 상담은 전화 <span class="nw">031-683-7575</span>나 카카오톡으로 해 주세요.'; });
+    form.addEventListener('submit', (e) => { e.preventDefault(); if (!ok()) return; msg.innerHTML = '데모 화면이라 신청이 접수되지 않습니다. 상담은 전화 <span class="nw">031-683-7575</span>나 카카오톡으로 해 주세요. 넣으신 이름과 연락처는 시험 기록으로 <span class="nw">이 브라우저에만</span> 남습니다.'; });
   }
 
   // P13 휴대폰: 예약·오시는 길 구간이 보이면 하단 막대를 내림, 지금 쪽 탭을 가운데로
@@ -78,9 +78,38 @@
   f.addEventListener('submit', async (e) => {
     e.preventDefault(); if (!ok()) return;
     const url = f.dataset.endpoint;
-    if (!url) { msg.innerHTML = '데모 화면이라 신청이 접수되지 않습니다. 상담은 전화 <span class="nw">031-683-7575</span>나 카카오톡으로 해 주세요.'; return; }
+    if (!url) { msg.innerHTML = '데모 화면이라 신청이 접수되지 않습니다. 상담은 전화 <span class="nw">031-683-7575</span>나 카카오톡으로 해 주세요. 넣으신 이름과 연락처는 시험 기록으로 <span class="nw">이 브라우저에만</span> 남습니다.'; return; }
     try { const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ name: f.name.value.trim(), tel: f.tel.value.trim(), time: f.time.value }) }); msg.textContent = r.ok ? '접수했습니다. 전화로 연락드리겠습니다.' : '접수하지 못했습니다. 전화로 연락해 주세요.'; } catch { msg.textContent = '접수하지 못했습니다. 전화로 연락해 주세요.'; }
   });
 })();
 // 쪽 안 메뉴: 지금 쪽 칸이 보이게
 (() => { const cur = document.querySelector('.subnav [aria-current]'); if (!cur) return; const ul = cur.closest('ul'), li = cur.parentElement; const right = li.offsetLeft - ul.offsetLeft + li.offsetWidth; if (right > ul.clientWidth) ul.scrollLeft = right - ul.clientWidth + 24; })();
+
+// 휴대폰: 아래로 내리면 머리글의 로고 줄을 접고 메뉴 탭 줄만 남긴다. 위로 올리거나 맨 위 근처면 다시 편다(CSS .site-head.is-up — 1023px 이하에서만 움직임)
+(() => {
+  const head = document.querySelector('.site-head'); if (!head) return;
+  let last = scrollY, busy = false;
+  addEventListener('scroll', () => {
+    if (busy) return; busy = true;
+    requestAnimationFrame(() => {
+      const y = scrollY;
+      if (y > 200 && y > last + 6) head.classList.add('is-up'); else if (y < last - 6 || y < 120) head.classList.remove('is-up');
+      last = y; busy = false;
+    });
+  }, { passive: true });
+})();
+
+// 진료시간 표: 오늘 요일 줄에 '오늘' 표시(한국 시간 기준). 공휴일·임시 휴진은 알 수 없으므로 '진료 중'이라고 단정하지 않는다
+(() => {
+  const day = '일월화수목금토'[new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getDay()];
+  const mark = () => document.querySelectorAll('dl.hours').forEach((dl) => {
+    dl.querySelectorAll(':scope > div').forEach((row) => {
+      const dt = row.querySelector('dt'); if (!dt) return;
+      const off = row.classList.contains('off');
+      row.classList.toggle('is-today', day === '일' ? off : !off && dt.textContent.trim() === day);
+    });
+  });
+  mark();
+  // 관리자 '바로 반영'(ops.js)이 표를 다시 그리면 다시 표시한다
+  if ('MutationObserver' in window) document.querySelectorAll('dl.hours').forEach((dl) => new MutationObserver(mark).observe(dl, { childList: true }));
+})();

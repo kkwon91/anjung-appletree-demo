@@ -11,12 +11,12 @@
 - 안선혜 대표원장 — 치과교정과 전문의 · 주요 진료 치아교정 · 연세대학교 치과대학 치의학 석사
 - 박상국 원장 · 고려대학교 치의학 석사
 
-## 홈 · 의료진 · 임플란트
+## 홈 · 의료진
 - [홈](https://kkwon91.github.io/anjung-appletree-demo/): 경기도 평택시 안중읍 안중로 132. 대표원장 3명과 원장 1명이 진료합니다. 진료시간·주차·의료진·임플란트 진료 안내. 전화 031-683-7575.
 - [의료진](https://kkwon91.github.io/anjung-appletree-demo/doctors/): 안중사과나무치과 의료진 4명(대표원장 3명·원장 1명)의 약력. 안선혜 대표원장 치과교정과 전문의.
-- [임플란트](https://kkwon91.github.io/anjung-appletree-demo/implant/): 평택 안중사과나무치과 임플란트 진료 안내. 2층 수술실과 CT실·회복실, 치료 네 단계, 뼈이식·임플란트 틀니·재수술, 진료시간.
 
 ## 임플란트
+- [임플란트](https://kkwon91.github.io/anjung-appletree-demo/implant/): 평택 안중사과나무치과 임플란트 진료 안내. 2층 수술실과 CT실·회복실, 치료 네 단계, 뼈이식·임플란트 틀니·재수술, 진료시간.
 - [임플란트 뼈이식](https://kkwon91.github.io/anjung-appletree-demo/implant/bone-graft/): 평택 안중사과나무치과 임플란트 뼈이식 안내. 잇몸뼈가 모자랄 때 본인의 뼈나 인공뼈를 이식하는 경우, 네 단계 진행, 상악동 뼈이식.
 - [임플란트 틀니](https://kkwon91.github.io/anjung-appletree-demo/implant/overdenture/): 평택 안중사과나무치과 임플란트 틀니 안내. 임플란트 몇 개에 연결장치로 틀니를 고정하는 방법, 탈부착식과 고정식, 세 단계 진행.
 - [임플란트 재수술](https://kkwon91.github.io/anjung-appletree-demo/implant/redo/): 평택 안중사과나무치과 임플란트 재수술 안내. 재수술이 필요한 세 경우와 기존 임플란트 제거, 새로 식립, 잇몸 모양을 다시 잡는 과정.
@@ -54,6 +54,7 @@
 ## 이용 안내
 - [진료시간 · 오시는 길 · 주차](https://kkwon91.github.io/anjung-appletree-demo/visit/): 경기도 평택시 안중읍 안중로 132. 화·목 오후 8시(금 2층 오후 6시·교정과 오후 8시), 토 오후 2시까지 진료, 일요일·공휴일 휴진. 성심주차장 주차권 도장. 전화 031-683-7575.
 - [상담 신청](https://kkwon91.github.io/anjung-appletree-demo/consult/): 안중사과나무치과 상담: 전화 031-683-7575, 카카오톡 채널 @사과나무치과안중, 온라인 상담 게시판.
+- [2분 자가진단](https://kkwon91.github.io/anjung-appletree-demo/check/): 불편한 곳 하나를 고르고 질문 5개에 답하면 진료를 언제쯤 받아 보면 좋을지 세 단계로 안내합니다. 진단이 아니며 답은 저장하지 않습니다. 안중사과나무치과 전화 031-683-7575.
 - [치료 뒤 주의사항(23개 글)](https://kkwon91.github.io/anjung-appletree-demo/caution/): 안중사과나무치과 치료 뒤 주의사항: 임플란트 3 · 치아교정 12 · 심미치료 1 · 종합진료 7개 안내 글.
 - [소식(공지·칼럼·나눔)](https://kkwon91.github.io/anjung-appletree-demo/news/): 안중사과나무치과 공지사항, 사과나무 칼럼(한국 농정신문 연재 1~10), 행복나눔 이야기 목록.
 - [비급여 진료비 안내(의료법 고지)](https://kkwon91.github.io/anjung-appletree-demo/pricing/)
@@ -61,7 +62,7 @@
 
 ## 질문 답
 - [자주 묻는 질문 18개](https://kkwon91.github.io/anjung-appletree-demo/faq/): 안중사과나무치과에 자주 묻는 질문 18개: 진료시간·주차·임플란트·교정·심미·종합진료·상담.
-- [안중사과나무치과 진료시간은 어떻게 되나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/hours/): 월요일과 수요일은 오전 9시 ~ 오후 6시, 화·목·금요일은 오전 9시 ~ 오후 8시(금요일 2층은 오후 6시까지), 토요일은 오전 9시 ~ 오후 2시입니다. 평일 점심시간은 오후 1시 ~ 2시이고, 토요일은 점심시간 없이 진료합니다. 요일마다 진료하는 층이 달라…
+- [안중사과나무치과 진료시간은 어떻게 되나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/hours/): 월요일과 수요일은 오전 9시 ~ 오후 6시, 화·목·금요일은 오전 9시 ~ 오후 8시(금요일 2층은 오후 6시까지), 토요일은 오전 9시 ~ 오후 2시입니다. 평일 점심시간은 오후 1시 ~ 2시이고, 토요일은 점심시간 없이 진료합니다.
 - [일요일과 공휴일에도 진료하나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/sunday/): 일요일과 공휴일은 휴진입니다. 토요일은 오전 9시 ~ 오후 2시까지 점심시간 없이 진료합니다.
 - [주차는 어디에 하나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/parking/): 성심주차장을 이용하시면 주차권에 병원 도장을 찍어 드려 무료로 주차할 수 있습니다. 본원 뒤 주차장은 자리가 좁고, 이용하실 때는 주차권을 받아 가셔야 나가실 수 있습니다. 이면도로 주차는 유료입니다.
 - [안중사과나무치과는 어디에 있나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/address/): 경기도 평택시 안중읍 안중로 132에 있습니다. 안중성당 쪽으로 좌회전한 뒤 샛길로 쭉 내려오시거나, 만드기네 쪽 골목으로 들어오시면 됩니다. 전화는 031-683-7575입니다.
@@ -76,6 +77,6 @@
 - [신경치료는 어떻게 하나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/root-canal/): 상한 신경 조직을 없애고 소독한 뒤, 신경과 혈관이 있던 공간을 알맞은 재료로 채워 넣습니다. 감염된 신경 확인부터 진료 완료까지 여덟 단계로 진행하며, 신경치료 뒤 약해진 치아는 크라운으로 씌워 보호합니다.
 - [사랑니는 꼭 빼야 하나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/wisdom-tooth/): 올바르게 난 사랑니는 관리만 잘하면 별다른 문제를 일으키지 않습니다. 다만 칫솔이 닿기 어려운 자리라 충치가 생기기 전에 미리 빼기를 권하는 경우가 많고, 누워서 나거나 묻힌 사랑니는 앞 어금니나 주변 뼈에 문제를 일으킬 수 있습니다. 진찰과 촬영 뒤 안내합니다.
 - [잇몸에서 피가 나면 치주질환인가요?](https://kkwon91.github.io/anjung-appletree-demo/faq/gum-bleeding/): 칫솔질하거나 음식을 먹을 때 잇몸에서 피가 나는 것은 치주질환에서 보이는 증상 가운데 하나입니다. 잇몸이 들뜨거나 입냄새, 잇몸 색이 검붉게 변하거나 고름이 함께 있으면 진찰을 받아 보세요. 치주 진료는 2층에서 합니다.
-- [턱에서 딱 소리가 나면 치료해야 하나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/tmj-sound/): 귀 앞에서 소리만 나는 경우에는 특별한 치료가 필요 없는 경우가 많습니다. 입이 잘 안 벌어지거나 통증이 함께 있으면 진단과 치료가 필요하며, 스플린트·약물·레이저 등으로 치료합니다.
+- [턱에서 딱 소리가 나면 치료해야 하나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/tmj-sound/): 귀 앞에서 소리만 나는 경우에는 특별한 치료가 필요 없는 경우가 많습니다. 입이 잘 안 벌어지거나 통증이 함께 있으면 진단과 치료가 필요하며, 스플린트, 약물, 레이저 등으로 치료합니다.
 - [치료 비용은 어떻게 안내받나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/cost/): 치아 상태와 치료 방법에 따라 달라 진찰 후 항목별로 미리 안내합니다. 의료법에 따른 비급여 진료비 안내는 홈페이지 아래쪽 '비급여 진료비'에서 볼 수 있습니다.
 - [상담은 어떻게 신청하나요?](https://kkwon91.github.io/anjung-appletree-demo/faq/consult/): 전화(031-683-7575)나 카카오톡 채널(@사과나무치과안중)로 문의하실 수 있습니다. 온라인 상담 게시판에 비밀글로 남기셔도 됩니다.

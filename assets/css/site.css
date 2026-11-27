@@ -32,7 +32,7 @@ a { color: inherit; }
 /* 머리글(P14 의 흰 바탕 상태를 처음부터 — 첫 화면이 전면 사진이 아니라서 투명 머리글을 쓰지 않음) */
 .site-head { position: sticky; top: 0; z-index: 30; background: #fff; border-bottom: 1px solid var(--line); }
 .site-head__bar { height: var(--head); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.site-head__logo { display: flex; align-items: center; text-decoration: none; flex: none; }
+.site-head__logo { display: flex; align-items: center; text-decoration: none; flex: none; min-height: 44px; }   /* 휴대폰에서 로고가 36px 로 줄어도 누름 높이는 44px */
 .site-head__logo img { width: 176px; height: 44px; }
 .pc-nav { display: flex; gap: 30px; font-size: 15px; font-weight: 600; }
 .pc-nav a { text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
@@ -43,7 +43,7 @@ a { color: inherit; }
 .m-tabs { display: none; }
 
 /* 공통 구간 */
-.sec { padding: 112px 0; }
+.sec { padding: 92px 0; }
 .sec + .sec { border-top: 1px solid var(--line); }
 .sec--soft { background: var(--soft); border-top: 0 !important; }
 .sec-h { margin: 0 0 12px; font-size: clamp(26px, 2.8vw, 38px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.3; }
@@ -52,7 +52,7 @@ a { color: inherit; }
 .sec-head .sec-h { margin: 0; }
 .more-link { font-size: 15px; color: var(--sub); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 6px; white-space: nowrap; display: inline-flex; align-items: center; min-height: 44px; }
 .more-link:hover { color: var(--ink); border-color: var(--ink); }
-.basis { margin: 14px 0 0; font-size: 13px; color: var(--sub); }
+.basis { margin: 14px 0 0; font-size: 14px; color: var(--sub); }
 
 /* 단추 */
 .btns { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -107,7 +107,7 @@ a { color: inherit; }
 .p04__name { margin: 16px 0 4px; font-size: 19px; font-weight: 800; letter-spacing: -0.02em; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-top: 2px solid var(--ink); padding-top: 12px; }
 .p04__name::after { content: "→"; font-weight: 400; color: var(--sub); transition: transform .3s; }
 .p04__sub { margin: 0; font-size: 15px; color: #2B323A; line-height: 1.55; }
-.p04__meta { margin: 6px 0 0; font-size: 13px; color: var(--sub); }
+.p04__meta { margin: 6px 0 0; font-size: 14px; color: var(--sub); }
 .ext { display: inline-block; margin-left: 3px; font-size: .85em; color: var(--sub); }
 .p04__more a { margin-left: 12px; display: inline-flex; align-items: center; min-height: 44px; }
 .p04__item a:hover .p04__frame img { transform: scale(1.03); }
@@ -118,7 +118,7 @@ a { color: inherit; }
 /* ── 의료진 줄(C-02: 이름 → 직함 → 주요 진료 → 약력 → 전문의 표시) ── */
 .docs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .docs a { text-decoration: none; }
-.doc { display: flex; flex-direction: column; height: 100%; }
+.docs .doc { display: flex; flex-direction: column; height: 100%; }   /* .docs 를 붙인다 — 개인정보처리방침 감싸개도 .doc 이라 휴대폰에서 본문이 오른쪽 칸으로 몰렸다(11-26 검수 H-1) */
 .doc__ph { aspect-ratio: 450 / 650; background: var(--soft); overflow: hidden; }
 .doc__ph img { width: 100%; height: 100%; object-fit: cover; }
 .doc__name { margin: 16px 0 0; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
@@ -146,7 +146,7 @@ a { color: inherit; }
 .p06__row:has(img.is-portrait) .p06__media { max-width: 440px; justify-self: end; }
 .p06__row:nth-child(even):has(img.is-portrait) .p06__media { justify-self: start; }
 .p06__rooms { margin: 20px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 15px; color: #2B323A; max-width: 32em; }
-.p06__rooms b { display: inline-block; margin-right: 10px; color: var(--sub); font-size: 13px; font-weight: 700; }
+.p06__rooms b { display: inline-block; margin-right: 10px; color: var(--sub); font-size: 14px; font-weight: 700; }
 .p06__media figcaption { margin-top: 10px; font-size: 13px; color: var(--sub); }
 
 /* ── P12 예약·진료시간·오시는 길 ── */
@@ -197,7 +197,7 @@ a { color: inherit; }
 .site-foot h2 { margin: 0 0 10px; font-size: 16px; color: #fff; }
 .site-foot ul { list-style: none; margin: 0; padding: 0; }
 .site-foot p { margin: 0; }
-.site-foot__demo { margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14); color: #9AA3AE; font-size: 13px; }
+.site-foot__demo { margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14); color: #9AA3AE; font-size: 14px; }
 
 /* ── P14 ② 접는 상담 띠(PC) ── */
 .cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; background: var(--ink); color: #fff; transform: translateY(calc(100% - 48px)); transition: transform .3s cubic-bezier(.2,.7,.2,1); }
@@ -220,11 +220,26 @@ body.has-cta { padding-bottom: 48px; }
 
 /* ── 진료·의료진 쪽 ── */
 .crumb { margin: 0; padding: 20px 0 0; font-size: 14px; color: var(--sub); }
-.crumb a { color: var(--sub); }
+.crumb a { color: var(--sub); padding: 14px 6px; margin: 0 -6px; }   /* 글자는 그대로 두고 누름 영역만 44px 로(글줄 안 요소의 위아래 안쪽 여백은 줄 높이를 바꾸지 않는다) */
 .page-hero { padding: 40px 0 64px; }
 .page-hero h1 { margin: 0 0 20px; font-size: clamp(36px, 4vw, 56px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.15; }
 .page-hero .lead { margin: 0; font-size: 18px; line-height: 1.75; color: #2B323A; max-width: 44em; }
 .page-hero .btns { margin-top: 28px; }
+/* 진료 쪽 첫 화면 사진판(자료에 hero 가 있을 때만) — 왼쪽 제목·소개 글·단추, 오른쪽 사진(틀 4:3 = 등록할 때 맞춘 사진 비율). 휴대폰은 제목 → 사진 → 소개 글 */
+.page-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 400px); grid-template-areas: "h ph" "body ph"; grid-template-rows: auto 1fr; column-gap: 64px; align-items: start; }   /* 쪽 안 차례(.toc)가 글 칸 안에 있어 글 칸이 사진(400×300)보다 길다 — 사진이 글 아래로 처지지 않는다 */
+.page-hero__grid h1 { grid-area: h; }
+.page-hero__body { grid-area: body; }
+.page-hero__ph { grid-area: ph; margin: 0; }
+.page-hero__ph img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r); background: var(--soft); }
+.page-hero__ph figcaption { margin-top: 8px; font-size: 13px; color: var(--sub); }
+.stock-tag { color: var(--sub); white-space: nowrap; }   /* 예시 사진 표시 — 병원 사진을 받으면 사라진다 */
+@media (max-width: 1100px) { .page-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 360px); column-gap: 40px; } }
+@media (max-width: 899px) { .page-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 300px); column-gap: 32px; } }   /* 세운 태블릿도 두 칸 — 한 칸으로 쌓으면 사진이 첫 화면을 다 차지한다 */
+@media (max-width: 767px) {
+  .page-hero__grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "h" "ph" "body"; }
+  .page-hero__ph { margin: 0 0 20px; }
+  .page-hero__ph img { aspect-ratio: 16 / 9; }   /* 휴대폰: 사진을 낮게 해서 첫 문단이 첫 화면에 들어오게 */
+}
 .toc { display: flex; flex-wrap: wrap; gap: 0 20px; margin: 32px 0 0; padding: 8px 0 0; border-top: 1px solid var(--line); list-style: none; font-size: 15px; }
 .toc a { color: var(--sub); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
 .text-link { display: inline-flex; align-items: center; min-height: 44px; }
@@ -554,7 +569,7 @@ body.has-cta { padding-bottom: 48px; }
 @media (max-width: 480px) { .p07__val { font-size: clamp(24px, 7.2vw, 30px); } .p07__label { font-size: 14px; } }
 @media (max-width: 1023px) {
   .pc-nav { display: none; }
-  .m-tabs { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; padding: 0 var(--gut); height: 44px; align-items: stretch; border-top: 1px solid var(--line); }
+  .m-tabs { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; padding: 0 var(--gut); height: 45px; align-items: stretch; border-top: 1px solid var(--line); }   /* 윗선 1px 을 빼고 탭 누름 높이 44px */
   .m-tabs::-webkit-scrollbar { display: none; }
   .m-tabs a:first-child { margin-left: -11px; }
   .m-tabs a { flex: none; display: flex; align-items: center; padding: 0 11px; font-size: 15px; font-weight: 600; color: var(--sub); text-decoration: none; border-bottom: 2px solid transparent; }
@@ -568,12 +583,12 @@ body.has-cta { padding-bottom: 48px; }
   .site-head__logo img { width: 144px; height: 36px; }
   .pc-nav { display: none; }
   .site-head__tel { font-size: 15px; }
-  .m-tabs { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; padding: 0 var(--gut); height: 44px; align-items: stretch; border-top: 1px solid var(--line); }
+  .m-tabs { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; padding: 0 var(--gut); height: 45px; align-items: stretch; border-top: 1px solid var(--line); }   /* 윗선 1px 을 빼고 탭 누름 높이 44px */
   .m-tabs::-webkit-scrollbar { display: none; }
   .m-tabs a:first-child { margin-left: -11px; }
   .m-tabs a { flex: none; display: flex; align-items: center; padding: 0 11px; font-size: 15px; font-weight: 600; color: var(--sub); text-decoration: none; border-bottom: 2px solid transparent; }
   .m-tabs a[aria-current="page"] { color: var(--ink); border-color: var(--ink); }
-  .sec { padding: 72px 0; }
+  .sec { padding: 56px 0; }
   .sec-lead { font-size: 16px; margin-bottom: 28px; }
   .sec-head { flex-direction: column; align-items: start; gap: 10px; }
   .hero { padding: 36px 0 56px; }
@@ -582,7 +597,7 @@ body.has-cta { padding-bottom: 48px; }
   .hero__lead { font-size: 16px; }
   .hero__ph { max-width: none; }
   .hero__frame { aspect-ratio: 4 / 5; }
-  .btns .btn { flex: 1 1 140px; }
+  .btns .btn { flex: 1 1 140px; white-space: nowrap; padding: 0 12px; }   /* 360 폭에서 단추 글자가 두 줄이 되지 않게 */
   .btns .btn--ink { flex-basis: 100%; }
   .hero__bar { flex-wrap: wrap; row-gap: 0; }
   .hero__cap { flex-basis: 100%; }
@@ -593,9 +608,9 @@ body.has-cta { padding-bottom: 48px; }
   .docs { grid-template-columns: 1fr; gap: 0; }
   .docs > li { border-top: 1px solid var(--line); padding: 20px 0; }
   .docs > li:last-child { padding-bottom: 0; }
-  .doc { display: grid; grid-template-columns: 104px 1fr; column-gap: 16px; align-items: start; height: auto; }
+  .docs .doc { display: grid; grid-template-columns: 104px 1fr; column-gap: 16px; align-items: start; height: auto; }
   .doc__ph { grid-column: 1; grid-row: 1 / span 4; }
-  .doc > :not(.doc__ph) { grid-column: 2; }
+  .docs .doc > :not(.doc__ph) { grid-column: 2; }
   .doc__rule { display: none; }
   .doc__name { margin: 0 0 6px; font-size: 18px; }
   .doc__name span { font-size: 14px; }
@@ -698,9 +713,15 @@ body.has-cta { padding-bottom: 48px; }
   .nx-wide .n, .cards__fig .nx-tmj .n { transform: scale(1.9); }
   .yl { font-size: 26px; }
 }
+@media (max-width: 359px) {   /* 320 폭에서는 그림이 더 줄어 11px 대가 된다 — 한 번 더 키운다(11-26 검수 M-6) */
+  .nx-tmj .n { transform: scale(1.8); }
+  .nx-wide .n, .cards__fig .nx-tmj .n { transform: scale(2.1); }
+  .yl { font-size: 29px; }
+}
 
-/* 휴대폰: 쪽 안 메뉴 — 마지막 줄에 하나만 남지 않게 칸을 맞춤(4개 = 2+2, 5·6개 = 3+2·3+3, 9개 = 3+3+3) */
-@media (max-width: 420px) {
+/* 휴대폰: 쪽 안 메뉴 — 마지막 줄에 하나만 남지 않게 칸을 맞춤(4개 = 2+2, 5·6개 = 3+2·3+3, 9개 = 3+3+3).
+   11-26: 420px 까지만 걸려 있어 430px 폭(큰 휴대폰)에서는 다섯 칸이 4 + 1 로, 600~620px 에서는 아홉 칸이 8 + 1 로 떨어졌다 → 639px 까지 넓힘(640px 부터는 아홉 칸도 한 줄에 들어간다 — 폭 440~760 을 20px 간격으로 훑어 확인) */
+@media (max-width: 639px) {
   .subnav ul { display: grid; grid-template-columns: repeat(3, max-content); justify-content: start; gap: 0; }
   .subnav ul[data-n="4"] { grid-template-columns: repeat(2, max-content); }
   .subnav a, .subnav li:first-child a { padding: 0 18px 0 0; }
@@ -713,8 +734,8 @@ body.has-cta { padding-bottom: 48px; }
   .gallery li:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
   .gallery li:first-child:nth-last-child(odd) img { aspect-ratio: 4 / 3; }
 }
-/* 휴대폰: 바닥글 링크 누름 높이 44px, 목록은 두 칸 */
-@media (max-width: 767px) {
+/* 휴대폰·세운 태블릿(바닥글이 한 줄로 쌓이는 899px 이하): 바닥글 링크 누름 높이 44px, 목록은 두 칸 */
+@media (max-width: 899px) {
   .site-foot ul { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
   .site-foot a { display: inline-flex; align-items: center; min-height: 44px; }
   .site-foot__ch a { padding: 0 2px; }
@@ -723,3 +744,120 @@ body.has-cta { padding-bottom: 48px; }
 @media (max-width: 767px) {
   .gallery li:not(:first-child:nth-last-child(odd)) img { aspect-ratio: 1 / 1; }
 }
+
+/* 누름 영역 44px(11-26 휴대폰 실측): 글자 크기는 그대로 두고 안쪽 여백으로 닿는 자리만 넓힌다. 바깥 여백을 그만큼 빼서 줄 높이·띠 높이는 바뀌지 않는다 */
+.demo-bar a { padding: 11px 0; margin: -5px 0; }
+.cta label.agree a, .cform label.agree a { padding: 10px 4px; margin: -10px -4px; }
+.more-blocks h3 a { display: inline-block; padding: 10px 0; margin: -10px 0; }
+.defs dt a { display: inline-block; padding: 13px 0; margin: -13px 0; }
+
+/* 예시 사진 안내 줄(홈 진료 안내처럼 사진마다 설명 줄이 없는 구간) */
+.stock-note { margin: 16px 0 0; font-size: 14px; color: var(--sub); }
+
+/* 바닥글 사업자 정보·연락처·채널: 항목(.fi) 단위로 묶고 구분점은 항목 앞에 그린다 — 휴대폰에서는 항목마다 한 줄이라 줄 끝·줄 첫머리에 점이 홀로 남지 않는다(11-26 검수 M-4) */
+.site-foot .fi { display: block; }
+.site-foot ul.site-foot__ch { display: flex; flex-wrap: wrap; gap: 0 20px; margin-top: 4px; }
+@media (max-width: 899px) {
+  .site-foot ul.site-foot__ch { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; margin-top: 8px; }
+}
+/* 주차장 사진 설명은 왼쪽 정렬 — 가운데 정렬이면 '성심주차장 — ⏎ 주차권에 병원 도장'처럼 갈려 보인다 */
+.p12__photos figcaption { text-align: left; }
+.p12__photos figcaption b { display: block; font-weight: 600; color: var(--ink); }   /* 이름 한 줄 + 설명 한 줄(줄표로 이으면 줄 끝에서 갈린다) */
+.p12__route { margin-top: 4px; }
+
+/* 휴대폰·세운 태블릿: 아래로 내리면 로고 줄을 접고 메뉴 탭 줄만 남긴다(위아래 고정 띠가 화면의 21% → 14%). 위로 올리면 다시 보인다 — site.js 가 is-up 을 붙였다 뗀다 */
+@media (max-width: 1023px) {
+  .site-head { transition: transform .2s ease; }
+  .site-head.is-up { transform: translateY(calc(-1 * var(--head))); }
+}
+
+/* 진료시간 표의 열 이름 줄(요일 · 진료 층 · 진료시간) — 표 칸과 같은 격자. '가운데 칸은 그날 진료하는 층입니다'라는 설명 문장을 대신한다 */
+.hours-head { display: grid; grid-template-columns: 3em 4em 1fr; gap: 8px; margin: 0; padding: 0 0 8px; font-size: 16px; color: var(--sub); }
+.hours-head span { font-size: 14px; }
+@media (max-width: 767px) { .hours-head { grid-template-columns: 2.2em 3.4em 1fr; font-size: 15px; } }
+
+/* 상담 쪽: 첫 문단과 본문 사이 빈 여백을 줄이고, 휴대폰에서는 신청 양식이 '바로 상담'보다 먼저 오게(11-26 검수 M-13) */
+#ways { padding-top: 16px; }
+.page-hero:has(+ #ways) { padding-bottom: 28px; }
+@media (max-width: 899px) { .consult .cform { order: -1; } }
+
+/* 진료시간 표: 오늘 요일 줄(site.js 가 is-today 를 붙인다 — 한국 시간 기준). 공휴일·임시 휴진은 모르므로 '진료 중'이라 하지 않고 '오늘'만 알린다 */
+.hours > div.is-today dt { color: var(--accent); }
+.hours > div.is-today dt::after { content: "오늘"; display: block; font-size: 12px; font-weight: 700; line-height: 1.3; }
+
+/* ── 나란한 칸의 끝 줄에 하나만 남지 않게(finish.md F-34 · tools/round.mjs 의 gridlone 으로 잼, 11-26) ── */
+/* 흐르는 줄(쪽 안 메뉴·함께 보면·더 보기 줄)의 끝 두 항목은 한 칸에 묶여 같이 줄을 바꾼다(lib.mjs flowLis) */
+.flow-end { display: inline-flex; flex-wrap: wrap; }
+.toc .flow-end { gap: 0 20px; }
+.related .flow-end { gap: 10px; }
+.more-row .flow-end { gap: 0 24px; }
+/* 바닥글 채널 줄: 인스타그램 둘(병원·교정과)을 한 칸에 — 다섯 칸이 네 칸이 되어 휴대폰은 두 줄, PC 는 한 줄에 맞는다 */
+.site-foot__ig { display: flex; align-items: center; flex-wrap: wrap; gap: 0 10px; }
+@media (min-width: 900px) { .site-foot ul.site-foot__ch { gap: 0 18px; } }   /* 휴대폰 격자의 칸 사이는 아래 메뉴와 같은 16px 그대로 — 둘째 열 시작선이 맞는다 */
+.site-foot .site-foot__ch a { padding: 0; }   /* 왼쪽 시작선을 위 사업자 정보·아래 메뉴와 같게(휴대폰 20px) */
+/* 세 칸짜리는 두 칸씩 놓지 않는다: 태블릿 폭(768~899)은 세 칸 그대로, 휴대폰은 한 줄에 하나(그림 왼쪽·글 오른쪽 — .psteps 와 같은 모양) */
+@media (min-width: 768px) and (max-width: 899px) {
+  .cards--c3, .steps--n3, .gallery--n3, .p09__grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .cards--c3 { gap: 16px; }
+}
+@media (max-width: 767px) {
+  .steps--n3 { grid-template-columns: 1fr; }
+  .steps--n3:not(.steps--text) { gap: 0; }
+  .steps--n3:not(.steps--text) > li { display: grid; grid-template-columns: 132px 1fr; grid-template-rows: auto 1fr; gap: 0 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .steps--n3:not(.steps--text) p { align-self: start; }
+  .steps--n3:not(.steps--text) > li:first-child { border-top: 1px solid var(--line); }
+  .steps--n3:not(.steps--text) .steps__fig { grid-row: span 2; align-self: start; }
+  .steps--n3:not(.steps--text) h3 { margin-top: 0; }
+}
+@media (max-width: 359px) {
+  .steps--n3:not(.steps--text) > li { grid-template-columns: 104px 1fr; }
+  .steps--n3:not(.steps--text) h3 { display: block; }
+  .steps--n3:not(.steps--text) h3::before { display: block; }   /* 번호를 윗줄로 올려 제목이 한 줄에 들어가게 */
+  .p09__names { display: grid; grid-template-columns: max-content max-content; justify-content: start; gap: 6px 28px; }   /* 상표 넷을 2 + 2 로 */
+}
+/* 그림 셋(교정 장치 단면)은 휴대폰에서 둘 + 가운데 하나 — 셋째를 왼쪽에 홀로 두지 않는다 */
+@media (max-width: 480px) {
+  .figrow--3 > figure:last-child:nth-child(3) { grid-column: 1 / -1; }
+  .figrow--3 > figure:last-child:nth-child(3) > svg, .figrow--3 > figure:last-child:nth-child(3) > img { width: calc(50% - 6px); margin: 0 auto; }
+}
+/* 순서 칩(진단 → 뼈이식 → 뼈 형성 확인 → 식립): 칸이 좁아 한 줄에 못 들어가면 둘씩 두 줄 — 끝에 '식립' 하나만 떨어지지 않게 */
+.more-blocks > div { container-type: inline-size; }
+@container (max-width: 350px) { .order { display: grid; grid-template-columns: max-content max-content; justify-content: start; } }
+
+/* 임플란트 쪽: CT실·수술실 사진 두 장 옆에 2층 설명(11-26, PC 에서 사진 오른쪽 ⅓ 이 비어 있었다) — 글은 홈의 2층 구간과 같은 자료(home.json floors.rows[0]) */
+.step-place { display: grid; grid-template-columns: minmax(0, 760px) minmax(0, 1fr); gap: 40px; align-items: start; margin: 40px 0 0; }
+.step-place .step-photos { margin: 0; }
+.step-place__t { border-top: 2px solid var(--ink); padding-top: 20px; }
+.step-place__t h3 { margin: 0 0 12px; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.step-place__t p { margin: 0 0 14px; font-size: 16px; color: #2B323A; }
+.step-place__t .more-row { margin-top: 4px; }
+@media (max-width: 1199px) { .step-place { grid-template-columns: minmax(0, 1fr); gap: 28px; } .step-place__t { max-width: 760px; } }   /* 1024~1199px 에서는 옆 칸이 176px 뿐이라 글이 다섯 줄로 잘게 갈린다(11-26 PC 폭 검수) → 사진 아래로 */
+
+/* 휴대폰에서만 줄을 바꾸는 자리(lib.mjs mbr) */
+@media (min-width: 768px) { .m-br { display: none; } }
+/* 좁은 칸의 설명 글은 줄 길이를 고르게 — 끝 줄에 '보관합니다.' 한 낱말만 남지 않게(11-26 휴대폰 폭 검수 '차' 유형. 두세 줄짜리라 계산이 가볍다) */
+.psteps p, .steps p, .p09__use, .p07__label, .cards p, .p04__sub { text-wrap: balance; }
+
+/* 굵은 구절(열여섯 글자 이하)은 PC 폭에서 통째로 다닌다 — 휴대폰에서는 뜻 묶음 단위로 갈린다(src/typeset.mjs ②) */
+@media (min-width: 1024px) {
+  .em-1 { white-space: nowrap; }
+  /* 한 줄이 서른 글자 안팎인 좁은 단(그림 옆 글·자가진단 옆 안내·임플란트 쪽 묶음 카드)에서는 통째로 묶지 않는다 — 열서너 글자 구절이 통째로 내려가
+     앞줄이 절반 넘게 비었다(11-26). 열두 글자 이하 구절은 이 단에서도 붙어 다닌다(줄바꿈 규칙이 따로 붙여 둔다) */
+  .split .em-1, .ck-side .em-1, .more-blocks .em-1 { white-space: normal; }
+}
+/* 첫 화면 사실 띠: 두 문장짜리 설명은 문장 사이에서만 줄이 바뀐다(pages.mjs). 1024~1100px 칸(187px)에는 둘째 문장이 2px 모자라 한 단계 작게 */
+@media (min-width: 900px) and (max-width: 1100px) { .p07__label { font-size: 14px; } }
+
+/* 격자 칸은 안의 글보다 좁아질 수 있어야 한다 — 붙여 둔 긴 덩어리가 칸을 화면 밖으로 밀지 않게(11-26 320px 위생관리 쪽) */
+.psteps li > *, .steps li > *, .cards__item > *, .p09__grid > li > * { min-width: 0; }
+
+/* 휴대폰 폭에서만 줄이 바뀔 수 있는 자리(src/typeset.mjs: 붙인 덩어리가 휴대폰 한도는 넘고 PC 한도 안일 때 '&nbsp;<wbr class="wb">').
+   768px 부터는 그 줄바꿈 자리를 없애 낱말이 붙어 다닌다 */
+@media (min-width: 768px) { wbr.wb { display: none; } }
+
+/* 구역 바로 아래에 놓인 문단(클래스 없는 것)도 구역 소개 글과 같은 글줄 폭으로 — /ortho/ '교정 시기' 문단이 PC 에서 1152px(한 줄에 일흔 글자 남짓)로 펼쳐져 있었다(11-26 PC 폭 검수) */
+.sec > .wrap > p:not([class]) { max-width: 46em; }
+
+/* 문장마다 줄 바꾸기(src/typeset.mjs sentenceBlocks): 쪽 첫 문단·구역 소개 글의 문장 하나가 한 줄씩 차지한다 — 줄은 문장이 끝나는 자리에서만 바뀌고,
+   한 문장이 한 줄보다 길면 그 문장 안에서 고르게 나뉜다(문장 끝에 한 낱말만 남지 않게) */
+.sn { display: block; text-wrap: balance; }

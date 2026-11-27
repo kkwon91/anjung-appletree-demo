@@ -25,7 +25,7 @@ p, li, td, th, figcaption { text-wrap: pretty; }
 .sh-lead b { font-weight: 800; color: var(--ink); }
 .sh-basis { margin: 10px 0 0; font-size: 14px; color: var(--sub); }
 .sh-toc { display: flex; flex-wrap: wrap; gap: 0 20px; margin: 20px 0 0; padding: 0; list-style: none; font-size: 15px; }
-.sh-toc a { display: inline-flex; min-height: 44px; align-items: center; }
+.sh-toc a { display: inline-flex; min-height: 44px; align-items: center; padding: 0 6px; margin: 0 -6px; }   /* 한 글자짜리 항목(홈)도 폭 24px 넘게 */
 
 .sh-sec { padding: 48px 0; border-top: 1px solid var(--line); }
 .sh-sec h2 { margin: 0 0 8px; font-size: 26px; line-height: 1.35; letter-spacing: -0.02em; }
@@ -69,13 +69,13 @@ p, li, td, th, figcaption { text-wrap: pretty; }
 .mtbl tbody th { font-weight: 700; width: 19%; }
 .mtbl td.old { color: var(--sub); width: 24%; }
 .mtbl td.new { font-weight: 700; width: 27%; }
-.mtbl td.how { font-size: 13px; color: var(--sub); }
+.mtbl td.how { font-size: 14px; color: var(--sub); }
 .mtbl small { display: block; font-size: 13px; font-weight: 400; color: var(--sub); }
 
 .list2 { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
 .list2 li { padding: 14px 0; border-bottom: 1px solid var(--line); }
 .list2 b { display: block; }
-.list2 span { font-size: 15px; color: var(--sub); }
+.list2 li > span { font-size: 15px; color: var(--sub); }
 
 .sh-foot { padding: 32px 0 48px; border-top: 1px solid var(--line); font-size: 14px; color: var(--sub); }
 
@@ -101,3 +101,17 @@ p, li, td, th, figcaption { text-wrap: pretty; }
   .mtbl td.new::before { content: "새 "; }
 }
 .pair > *, .dev > * { min-width: 0; }
+
+/* 320 폭: 창 틀 주소 줄이 말줄임으로 잘리지 않게 글자와 옆 여백을 조금 줄인다(F-23) */
+@media (max-width: 359px) { .win__bar { padding: 4px 8px; font-size: 12px; letter-spacing: -0.03em; } }
+
+/* 끝 줄에 하나만 남지 않게(11-26): 쪽 안 메뉴는 끝 두 항목을 한 칸에 묶고(lib.mjs flowLis), 사실 네 줄은 흐르는 줄 대신 두 칸 격자로 */
+.sh-toc .flow-end { display: inline-flex; flex-wrap: wrap; gap: 0 20px; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; }
+@media (max-width: 600px) { .facts { grid-template-columns: 1fr; } }
+
+/* 휴대폰 폭에서만 줄이 바뀔 수 있는 자리(src/typeset.mjs: 붙인 덩어리가 휴대폰 한도는 넘고 PC 한도 안일 때 '&nbsp;<wbr class="wb">').
+   768px 부터는 그 줄바꿈 자리를 없애 낱말이 붙어 다닌다 */
+@media (min-width: 768px) { wbr.wb { display: none; } }
+/* 휴대폰 폭에서만 켜는 줄바꿈(문장을 새 줄에서 시작하게) */
+@media (min-width: 768px) { .m-br { display: none; } }
