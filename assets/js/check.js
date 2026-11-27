@@ -95,24 +95,26 @@
     const d = '일월화수목금토'[new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getDay()];
     const row = D.hours.rows.find((r) => r.day === d);
     if (!row) return `<span class="sn">오늘(${d}요일)은 휴진입니다.</span> ${sn(D.flags.afterHours)}`;
-    const lunch = d === '토' ? '' : `&nbsp;· <span class="nw">점심${esc(D.hours.lunch.replace(/^평일\s*/, ''))}</span>`;
+    const lunch = d === '토' ? '' : `&nbsp;· <span class="nw">점심&nbsp;${esc(D.hours.lunch.replace(/^평일\s*/, ''))}</span>`;
     const note = row.note && row.note.length ? `(${row.note.map((n) => `<span class="nw">${esc(n)}</span>`).join(', ')})` : '';
     const only = row.floor && row.floor !== '전체' ? `<span class="sn">오늘(${d}요일)은 <b><span class="nw">${esc(row.floor)}만</span> 진료</b>합니다.</span> ` : '';
     const hours = `<span class="sn">${only ? '' : `오늘(${d}요일) 진료 `}<span class="nw">${esc(row.text)}</span>${note}${lunch}.</span>`;
     return `${only}${hours} <span class="sn">공휴일은 휴진합니다.</span> ${sn(D.flags.afterHours)}`;
   }
+  // 진료 안내 링크: 셋 이상이면 끝 두 개를 한 칸에 묶는다(끝 줄에 링크 하나만 떨어지지 않게 — 사이트의 lib.mjs flowLis 와 같은 방식)
+  const linkLis = (L) => { const li = ([t, h]) => `<a href="${esc(h)}">${esc(t)}</a>`; return L.length < 3 ? L.map((x) => `<li>${li(x)}</li>`).join('') : L.slice(0, -2).map((x) => `<li>${li(x)}</li>`).join('') + `<li class="flow-end">${L.slice(-2).map(li).join('')}</li>`; };
   function resultHtml(r) {
     const a = r.a, F = D.flags;
     const urgent = r.urgent.length ? `<div class="ck-urgent">
     <h2 class="ck-h ck-urgent__h" tabindex="-1">${esc(F.resultH)}</h2>
-    <p class="ck-urgent__picked">${r.urgent.map((f) => esc(f.t)).join(' · ')}</p>
+    <p class="ck-urgent__picked">${r.urgent.map((f) => esc(f.t)).join('&nbsp;· ')}</p>
     <p>${sn(F.resultText)}</p>
     <p class="ck-urgent__today">${todayLine()}</p>
     <a class="btn btn--ink" href="tel:${C.tel}">${ICON.tel}전화 ${C.tel}</a>
   </div>` : '';
     const said = r.said.length ? `<div class="ck-said">
     <h3 class="ck-h3">진찰 때 말씀하실 답</h3>
-    <ul>${r.said.map(({ q, o }) => `<li><p class="ck-said__q">${esc(q.q)}</p><p class="ck-said__a">${esc(o.t)}${o.atLeast && o.atLeast === r.n && r.raised ? '<span class="ck-said__up">이 답으로 단계가 올라갔습니다</span>' : ''}</p>${o.note ? `<p class="ck-said__n">${esc(o.note)}</p>` : ''}</li>`).join('')}</ul>
+    <ul>${r.said.map(({ q, o }) => `<li><p class="ck-said__q">${esc(q.q)}</p><p class="ck-said__a">${esc(o.t)}${o.atLeast && o.atLeast === r.n && r.raised ? '<span class="ck-said__up">이 답으로 단계가 올라갔습니다</span>' : ''}</p>${o.note ? `<p class="ck-said__n">${sn(o.note)}</p>` : ''}</li>`).join('')}</ul>
   </div>` : '';
     return `<div class="ck-stage ck-res">
   ${urgent}
@@ -123,18 +125,18 @@
       <h2 class="ck-h ck-res__h" tabindex="-1">${esc(r.lv.label)}</h2>
       <p class="ck-res__p">${sn(r.byUrgent ? F.raisedText : a.results[r.lv.id])}</p>
       ${a.extra && !r.byUrgent ? `<p class="ck-res__p">${esc(a.extra)}</p>` : ''}
-      <p class="ck-note">${esc(D.notice)}</p>
+      <p class="ck-note">${sn(D.notice)}</p>
     </div>
   </div>
   ${said}
   <div class="ck-res__go">
     <h3 class="ck-h3">진료 안내</h3>
-    <ul class="ck-links">${a.links.map(([t, h]) => `<li><a href="${esc(h)}">${esc(t)}</a></li>`).join('')}</ul>
+    <ul class="ck-links">${linkLis(a.links)}</ul>
   </div>
   <div class="ck-res__call">
     <h3 class="ck-h3">상담</h3>
     <div class="btns"><a class="btn btn--ink" href="tel:${C.tel}">${ICON.tel}전화 ${C.tel}</a><a class="btn btn--kakao" href="${esc(C.kakao)}" target="_blank" rel="noopener">${ICON.talk}카카오톡 상담</a><a class="btn btn--line" href="${esc(C.consult)}">${ICON.note}상담 신청</a></div>
-    <p class="ck-priv">상담 신청에는 오늘 고른 답이 넘어가지 않습니다. 통화 때 위 답을 말씀해 주세요.</p>
+    <p class="ck-priv"><span class="sn">상담 신청에는 오늘 고른 답이 넘어가지&nbsp;않습니다.</span> <span class="sn">통화하실 때 위&nbsp;답을 말씀해&nbsp;주세요.</span></p>
   </div>
   <p class="ck-again"><button type="button" data-restart>처음부터 다시</button><button type="button" data-redo>${esc(a.name)} 다시 답하기</button></p>
 </div>`;

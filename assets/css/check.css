@@ -82,6 +82,7 @@
 .ck-links a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 600; text-decoration-color: var(--line); text-underline-offset: 6px; }
 .ck-links a::after { content: "→"; font-weight: 400; color: var(--sub); }
 .ck-links a:hover { color: var(--accent); }
+.ck-links .flow-end { display: flex; flex-wrap: wrap; gap: 0 28px; }
 .ck-res__call .btns { margin-top: 12px; }
 .ck-again { display: flex; flex-wrap: wrap; gap: 0 24px; margin: 32px 0 0; }
 .ck-again button { min-height: 44px; padding: 0; background: none; border: 0; font: inherit; font-size: 15px; color: var(--sub); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 6px; cursor: pointer; }

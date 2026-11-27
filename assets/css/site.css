@@ -121,8 +121,10 @@ a { color: inherit; }
 .docs .doc { display: flex; flex-direction: column; height: 100%; }   /* .docs 를 붙인다 — 개인정보처리방침 감싸개도 .doc 이라 휴대폰에서 본문이 오른쪽 칸으로 몰렸다(11-26 검수 H-1) */
 .doc__ph { aspect-ratio: 450 / 650; background: var(--soft); overflow: hidden; }
 .doc__ph img { width: 100%; height: 100%; object-fit: cover; }
-.doc__name { margin: 16px 0 0; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
-.doc__name span { font-size: 15px; font-weight: 600; color: var(--sub); margin-left: 6px; }
+/* 11-27 사용자 '이름을 가운데 정렬해서 크게': 사진 아래 이름을 가운데로, 26px. 직함은 이름 옆 작은 글씨 그대로(PC). 휴대폰은 사진 왼쪽 배치라 아래에서 왼쪽 정렬로 되돌린다 */
+/* 이름 줄은 .docs 를 붙여 쓴다 — 개인정보처리방침 감싸개의 `.doc p`(16px·위 여백 0)가 더 세게 걸려 이름이 본문 크기로 사진에 붙어 있었다(11-27) */
+.docs .doc__name { margin: 18px 0 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; text-align: center; }
+.docs .doc__name span { font-size: 16px; font-weight: 600; color: var(--sub); margin-left: 8px; }
 .doc__rule { height: 1px; background: var(--line); margin: 12px 0; }
 .doc__spec { margin: 0 0 8px; font-size: 15px; font-weight: 700; color: var(--accent); }
 .doc__cv { list-style: none; margin: 0; padding: 0; font-size: 15px; line-height: 1.5; color: #4A525C; }
@@ -612,8 +614,8 @@ body.has-cta { padding-bottom: 48px; }
   .doc__ph { grid-column: 1; grid-row: 1 / span 4; }
   .docs .doc > :not(.doc__ph) { grid-column: 2; }
   .doc__rule { display: none; }
-  .doc__name { margin: 0 0 6px; font-size: 18px; }
-  .doc__name span { font-size: 14px; }
+  .docs .doc__name { margin: 0 0 6px; font-size: 21px; text-align: left; }
+  .docs .doc__name span { font-size: 14px; margin-left: 6px; }
   .doc__spec { margin-bottom: 4px; }
   .doc__spec, .doc__cv { font-size: 14px; }
   .p12__btns { grid-template-columns: 1fr 1fr; }
